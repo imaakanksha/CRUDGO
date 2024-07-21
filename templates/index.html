@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD App</title>
+</head>
+<body>
+    <h1>CRUD App</h1>
+    <form id="addItemForm">
+        <label for="itemName">Name:</label>
+        <input type="text" id="itemName" name="itemName" required>
+        <label for="itemPrice">Price:</label>
+        <input type="number" id="itemPrice" name="itemPrice" step="0.01" required>
+        <button type="submit">Add Item</button>
+    </form>
+    <div id="itemList">
+        <!-- Item list will be displayed here -->
+    </div>
+
+    <h2>Update Item</h2>
+    <form id="updateItemForm">
+        <input type="hidden" id="itemId" name="itemId">
+        <label for="updatedItemName">Name:</label>
+        <input type="text" id="updatedItemName" name="updatedItemName" required>
+        <label for="updatedItemPrice">Price:</label>
+        <input type="number" id="updatedItemPrice" name="updatedItemPrice" step="0.01" required>
+        <button type="submit">Update Item</button>
+    </form>
+
+    <script>
+        function displayUpdateForm(id, name, price) {
+            document.getElementById("itemId").value = id;
+            document.getElementById("updatedItemName").value = name;
+            document.getElementById("updatedItemPrice").value = price;
+            document.getElementById("updateItemForm").style.display = "block";
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./static/app.js"></script>
+</body>
+</html>
